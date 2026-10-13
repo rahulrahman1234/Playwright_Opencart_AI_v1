@@ -18,6 +18,7 @@ export class RegistrationPage {
   private readonly passwordInput: Locator;
   private readonly privacyAgreement: Locator;
   private readonly continueButton: Locator;
+  private readonly registrationHeading: Locator;
   private readonly successHeading: Locator;
 
   constructor(page: Page) {
@@ -30,10 +31,22 @@ export class RegistrationPage {
     this.passwordInput = page.getByPlaceholder('Password');
     this.privacyAgreement = page.locator('input[name="agree"]');
     this.continueButton = page.getByRole('button', { name: 'Continue', exact: true });
+    this.registrationHeading = page.getByRole('heading', {
+      name: 'Register Account',
+      exact: true,
+    });
     this.successHeading = page.getByRole('heading', {
       name: 'Your Account Has Been Created!',
       exact: true,
     });
+  }
+
+  /**
+   * Checks whether the customer registration page is displayed.
+   * @returns Promise<boolean> - true when the registration heading is displayed
+   */
+  async isRegistrationPageExists(): Promise<boolean> {
+    return this.registrationHeading.isVisible();
   }
 
   /**

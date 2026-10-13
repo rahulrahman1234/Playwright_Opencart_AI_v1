@@ -25,6 +25,19 @@ export class MyAccountPage {
   }
 
   /**
+   * Opens the customer account from the My Account menu.
+   * @returns Promise<MyAccountPage> - Customer account page object
+   */
+  async openMyAccountFromMenu(): Promise<MyAccountPage> {
+    await this.accountMenu.click();
+    await this.page
+      .locator('#top')
+      .getByRole('link', { name: 'My Account', exact: true })
+      .click();
+    return new MyAccountPage(this.page);
+  }
+
+  /**
    * Logs out the current customer.
    * @returns Promise<LogoutPage> - Account logout page object
    */

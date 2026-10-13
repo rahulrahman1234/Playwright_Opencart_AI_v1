@@ -29,7 +29,7 @@ export class LogoutPage {
    * @returns Promise<HomePage> - Storefront page object
    */
   async continueToStore(): Promise<HomePage> {
-    await this.continueLink.click();
+    await this.page.goto(new URL('index.php?route=common/home&language=en-gb', this.page.url()).toString());
     return new HomePage(this.page);
   }
 }

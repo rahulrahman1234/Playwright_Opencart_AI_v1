@@ -3,7 +3,7 @@ import { test, expect } from '../../fixtures/pageFixtures';
 import { RandomDataUtil } from '../../utils/dataGenerator';
 import { Helper } from '../../utils/helper';
 
-test('End-to-end customer shopping flow @master @sanity @regression @web @end-to-end', async ({
+test('End-to-end customer shopping flow @master', async ({
   homePage,
 }) => {
   const customer = {

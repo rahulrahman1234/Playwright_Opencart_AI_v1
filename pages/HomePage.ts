@@ -18,6 +18,11 @@ export class HomePage {
     this.searchInput = page.getByPlaceholder('Search');
   }
 
+  private async goToRoute(route: string): Promise<void> {
+    const targetUrl = new URL(`index.php?route=${route}&language=en-gb`, this.page.url()).toString();
+    await this.page.goto(targetUrl);
+  }
+
   /**
    * Checks whether the storefront home page is displayed.
    * @returns Promise<boolean> - true when the storefront is displayed
@@ -32,7 +37,7 @@ export class HomePage {
    */
   async openRegisterPage(): Promise<RegistrationPage> {
     await this.accountMenu.click();
-    await this.page.getByRole('link', { name: 'Register', exact: true }).click();
+    await this.page.locator('#top').getByRole('link', { name: 'Register', exact: true }).click();
     return new RegistrationPage(this.page);
   }
 
@@ -41,8 +46,7 @@ export class HomePage {
    * @returns Promise<LoginPage> - Login page object
    */
   async openLoginPage(): Promise<LoginPage> {
-    await this.accountMenu.click();
-    await this.page.getByRole('link', { name: 'Login', exact: true }).click();
+    await this.goToRoute('account/login');
     return new LoginPage(this.page);
   }
 

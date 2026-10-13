@@ -1,48 +1,10 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="38.772662">
-<testsuite name="web\endToEndShoppingFlow.spec.ts" timestamp="2026-10-13T03:37:31.991Z" hostname="chromium" tests="1" failures="0" skipped="0" time="30.727" errors="1">
-<testcase name="End-to-end customer shopping flow @master @sanity @regression @web @end-to-end" classname="web\endToEndShoppingFlow.spec.ts" time="30.727">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="21.493707999999636">
+<testsuite name="web\userRegistration.spec.ts" timestamp="2026-10-13T11:40:39.535Z" hostname="chromium" tests="1" failures="0" skipped="0" time="15.061" errors="0">
+<testcase name="User registration flow @master @sanity @web" classname="web\userRegistration.spec.ts" time="15.061">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|..\test-results\web-endToEndShoppingFlow-E-c418e-y-regression-web-end-to-end-chromium\test-failed-1.png]]
-
-[[ATTACHMENT|..\test-results\web-endToEndShoppingFlow-E-c418e-y-regression-web-end-to-end-chromium\error-context.md]]
+<![CDATA[Customer registration completed successfully.
 ]]>
 </system-out>
-<error message="Test timeout of 30000ms exceeded." type="Error">
-<![CDATA[  [chromium] › web\endToEndShoppingFlow.spec.ts:6:5 › End-to-end customer shopping flow @master @sanity @regression @web @end-to-end › 5) Log in with the new credentials 
-
-    Test timeout of 30000ms exceeded.
-
-    Error: page.waitForURL: Target page, context or browser has been closed
-    =========================== logs ===========================
-    waiting for navigation until "load"
-      navigated to "http://localhost/opencart/upload/index.php?route=checkout/cart&language=en-gb"
-      navigated to "http://localhost/opencart/upload/index.php?route=checkout/cart&language=en-gb"
-      navigated to "http://localhost/opencart/upload/index.php?route=checkout/cart&language=en-gb"
-      navigated to "http://localhost/opencart/upload/index.php?route=checkout/cart&language=en-gb"
-      navigated to "http://localhost/opencart/upload/index.php?route=checkout/cart&language=en-gb"
-      navigated to "http://localhost/opencart/upload/index.php?route=account/logout&language=en-gb"
-    ============================================================
-
-       at ..\pages\LoginPage.ts:31
-
-      29 |     await this.passwordInput.fill(password);
-      30 |     await this.loginButton.click();
-    > 31 |     await this.page.waitForURL(/route=account\/account/);
-         |                     ^
-      32 |     return new MyAccountPage(this.page);
-      33 |   }
-      34 | }
-        at LoginPage.login (F:\PLAYWRIGHT JAVASCRIPT\Playwright_Opencart_AI\pages\LoginPage.ts:31:21)
-        at F:\PLAYWRIGHT JAVASCRIPT\Playwright_Opencart_AI\tests\web\endToEndShoppingFlow.spec.ts:41:32
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\web-endToEndShoppingFlow-E-c418e-y-regression-web-end-to-end-chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\web-endToEndShoppingFlow-E-c418e-y-regression-web-end-to-end-chromium\error-context.md
-]]>
-</error>
 </testcase>
 </testsuite>
 </testsuites>
